@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18 for u</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="music-player" id="musicPlayer" title="Play music">
+  <span class="music-icon" id="musicIcon">♪</span>
+  <span class="music-label">Music</span>
+  
+  <audio id="bgMusic" src="assets/sfx/One Direction - 18.mp3" loop></audio>
+</div>
+  <!-- ══════════════════════════════════════════
+       FLOATING HEARTS CANVAS (behind everything)
+  ══════════════════════════════════════════ -->
+  <canvas id="heartsCanvas"></canvas>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 1 · HERO
+  ══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__sparkles" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__pretext">✦ A little something made just for you ✦</p>
+
+      <h1 class="hero__title">
+        Happy Birthday<br />
+        <span class="hero__name">Aura Leviona Azzahra</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Every star in the sky wishes you the most beautiful day today 🌸
+      </p>
+
+      <button class="btn btn--glow" id="openSurpriseBtn">
+        <span class="btn__text">Open Your Surprise</span>
+        <span class="btn__shimmer"></span>
+      </button>
+    </div>
+
+    <!-- Down-scroll hint -->
+    <div class="scroll-hint" id="scrollHint" aria-hidden="true">
+      <span class="scroll-hint__label">scroll</span>
+      <span class="scroll-hint__arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 2 · ENVELOPE / LETTER
+  ══════════════════════════════════════════ -->
+  <section class="letter-section" id="letterSection">
+    <h2 class="section-title">A Letter From My Heart</h2>
+
+    <!-- Envelope wrapper -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+
+      <!-- The envelope -->
+      <div class="envelope" id="envelope" role="button" tabindex="0"
+           aria-label="Click to open the letter">
+
+        <!-- Envelope flap (top) -->
+        <div class="envelope__flap" id="envelopeFlap" aria-hidden="true">
+          <div class="envelope__flap-heart">♥</div>
+        </div>
+
+        <!-- Envelope body -->
+        <div class="envelope__body" aria-hidden="true">
+          <div class="envelope__lines">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="envelope__hint">click to open</p>
+        </div>
+
+      </div><!-- /envelope -->
+
+      <!-- Letter card (hidden until envelope opens) -->
+      <div class="letter-card" id="letterCard" aria-live="polite">
+        <div class="letter-card__inner">
+          <p class="letter-card__greeting">Dearest Onaaa,</p>
+          <p class="letter-card__body" id="typewriterText"></p>
+          <p class="letter-card__sign">With all my love,<br /><em>Someone who cares deeply about you</em> 🌹</p>
+        </div>
+      </div>
+
+    </div><!-- /envelope-wrapper -->
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 3 · PHOTO GALLERY
+  ══════════════════════════════════════════ -->
+  <section class="gallery-section" id="gallerySection">
+    <h2 class="section-title">Our Beautiful Moments</h2>
+    <p class="section-sub">Memories I'll treasure forever 🎞️</p>
+
+    <div class="gallery-carousel" id="galleryCarousel">
+
+      <!-- Carousel track -->
+      <div class="gallery-track" id="galleryTrack">
+
+        <!-- SLIDE 1 -->
+        <div class="gallery-slide" data-index="0">
+          <div class="gallery-slide__img-wrap">
+            <!-- Replace src with your real photos -->
+            <img
+              src="assets/images/i1.jpeg"
+              alt="Memory 1"
+              class="gallery-slide__img"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-slide__caption">Every moment with you is a gift 🌸</p>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="gallery-slide" data-index="1">
+          <div class="gallery-slide__img-wrap">
+            <img
+              src="assets/images/i10.jpeg"
+              alt="Memory 2"
+              class="gallery-slide__img"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-slide__caption">Your smile lights up every room ✨</p>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="gallery-slide" data-index="2">
+          <div class="gallery-slide__img-wrap">
+            <img
+              src="assets/images/i12.jpeg"
+              alt="Memory 3"
+              class="gallery-slide__img"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-slide__caption">Beautiful memories, beautiful you 💗</p>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="gallery-slide" data-index="3">
+          <div class="gallery-slide__img-wrap">
+            <img
+              src="assets/images/i5.jpeg"
+              alt="Memory 4"
+              class="gallery-slide__img"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-slide__caption">You are my favourite chapter 📖</p>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="gallery-slide" data-index="4">
+          <div class="gallery-slide__img-wrap">
+            <img
+              src="assets/images/i7.jpeg"
+              alt="Memory 5"
+              class="gallery-slide__img"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-slide__caption">Every day is brighter because of you 🌷</p>
+        </div>
+
+      </div><!-- /gallery-track -->
+
+      <!-- Navigation arrows -->
+      <button class="gallery-btn gallery-btn--prev" id="prevBtn" aria-label="Previous photo">&#10094;</button>
+      <button class="gallery-btn gallery-btn--next" id="nextBtn" aria-label="Next photo">&#10095;</button>
+
+      <!-- Dots -->
+      <div class="gallery-dots" id="galleryDots" aria-label="Photo navigation"></div>
+
+    </div><!-- /gallery-carousel -->
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       LIGHTBOX MODAL
+  ══════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 4 · FINAL LOVE MESSAGE
+  ══════════════════════════════════════════ -->
+  <section class="final-section" id="finalSection">
+
+    <div class="final-card glasscard">
+      <div class="final-card__deco" aria-hidden="true">✦ ✦ ✦</div>
+      <h2 class="final-card__title">To Onaaa, on Your Special Day</h2>
+      <p class="final-card__message">
+        May this birthday mark the beginning of a year overflowing with joy,
+        abundance, and beautiful new chapters. You deserve every wonderful thing
+        this world has to offer — and so much more.
+        <br /><br />
+        Thank you for existing, for laughing, for shining. The world is a
+        lovelier place because you're in it. 🌹
+      </p>
+      <div class="final-card__signature">
+        <span>With endless love &amp; warmth,</span><br />
+        <em class="signature-name">Someone who admires you dearly</em>
+      </div>
+      <div class="final-card__deco final-card__deco--bottom" aria-hidden="true">♥ ♥ ♥</div>
+    </div>
+
+    <!-- Hidden secret trigger (subtle heart in corner) -->
+    <div class="secret-trigger" id="secretTrigger"
+         role="button" tabindex="0" title="psst… click me 🤫"
+         aria-label="Discover a secret surprise">
+      <span>💌</span>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SECRET SURPRISE MODAL
+  ══════════════════════════════════════════ -->
+  <div class="secret-modal" id="secretModal" role="dialog" aria-modal="true"
+       aria-label="Secret surprise" hidden>
+    <div class="secret-modal__backdrop" id="secretBackdrop"></div>
+    <div class="secret-modal__box glasscard">
+      <button class="secret-modal__close" id="secretClose" aria-label="Close secret">✕</button>
+      <div class="secret-modal__glow" aria-hidden="true"></div>
+
+      <p class="secret-modal__pre">✨ A little secret just for you ✨</p>
+      <h3 class="secret-modal__title">You Are My</h3>
+      <div class="secret-modal__words" id="secretWords" aria-live="polite">
+        <!-- Word cycling done in JS -->
+      </div>
+      <p class="secret-modal__note">
+        No matter where life takes us, know that you hold a very special place —
+        always and always. 💜
+      </p>
+      <div class="secret-modal__hearts" aria-hidden="true" id="secretHearts"></div>
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
